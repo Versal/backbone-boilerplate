@@ -27,10 +27,10 @@ var AppView = Backbone.View.extend({
       var editableFlag = editable.editable;
       if(editableFlag){
         this.$('[name=greeting]').removeAttr('readonly');
-        this.$('[name=learnerName]').removeAttr('readonly');
+        this.$('[name=learnerName]').attr('readonly', 'true');
       }else{
         this.$('[name=greeting]').attr('readonly', 'true');
-        this.$('[name=learnerName]').attr('readonly', 'true');
+        this.$('[name=learnerName]').removeAttr('readonly');
       }
     }.bind(this));
 
@@ -47,13 +47,15 @@ var AppView = Backbone.View.extend({
   },
 
   onGreetingChange: function(event){
-    // console.log('onGreetingChange', event.target.name, event.target.value);
-    this.player.setAttribute(event.target.name, event.target.value);
+    var obj = {};
+    obj[event.target.name] = event.target.value;
+    this.player.setAttributes(obj);
   },
 
   onLearnerNameChange: function(event){
-    // console.log('onLearnerNameChange', event.target.name, event.target.value);
-    this.player.setLearnerAttribute(event.target.name, event.target.value);
+    var obj = {};
+    obj[event.target.name] = event.target.value;
+    this.player.setLearnerState(obj);
   },
 
   render: function(){
