@@ -47,12 +47,12 @@ var AppView = Backbone.View.extend({
   },
 
   onGreetingChange: function(event){
-    console.log('onGreetingChange', event.target.name, event.target.value);
+    // console.log('onGreetingChange', event.target.name, event.target.value);
     this.player.setAttribute(event.target.name, event.target.value);
   },
 
   onLearnerNameChange: function(event){
-    console.log('onLearnerNameChange', event.target.name, event.target.value);
+    // console.log('onLearnerNameChange', event.target.name, event.target.value);
     this.player.setLearnerAttribute(event.target.name, event.target.value);
   },
 
