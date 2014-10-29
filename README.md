@@ -4,7 +4,14 @@ This is a sample gadget, that utilizes versal-gadget-api to ask learner a questi
 
 As an author, you can edit question prompt. As a learner, you can answer the question.
 
-## Installation and running
+## how to install
+```
+npm install -g bower grunt-cli browserify
+npm install
+bower install
+```
 
-Run `bower install` to install dependencies.
-Run `versal preview` to preview gadget in Versal player.
+### how to dev
+```
+grunt
+```
